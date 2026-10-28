@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>保險保障島｜保險顧問 梁仕翰</title>
+<title>保險保障島｜富邦人壽 業務員 梁仕翰 個人介紹頁</title>
 <style>
 :root{--coral:#db6a41;--ink:#211d1d;--cream:#fff8f4;--yellow:#fcea8b;--stone:#c5b5a7;--green:#71806a}
 *{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:radial-gradient(#fffdf9,#edddcf)}
@@ -53,11 +53,19 @@ button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid
 .gap{background:#fff;border-radius:12px;padding:8px 10px;margin:6px 0;font-size:13.5px;line-height:1.55}.gap b{display:block}
 .cta{display:block;width:100%;margin-top:12px;background:var(--coral);color:#fff;font-weight:700;text-align:center;text-decoration:none;line-height:44px;border-radius:12px}
 #bCheck[aria-pressed=true]{background:var(--coral);color:#fff}#bReset{display:none}body.checking #bReset{display:flex}
+#bBack{display:none;background:var(--ink);color:#fff}body.inlevel #bBack{display:inline-block}
+.lbl.main.sel{background:var(--ink);color:#fff;border-color:var(--ink)}
+.lbl.main{font-size:15px;padding:6px 14px;background:var(--cream);border:2px solid var(--coral)}
+.rlink{display:block;background:#fff;border-radius:12px;padding:9px 12px;margin:6px 0;font-size:13.5px;color:var(--ink);text-decoration:none;box-shadow:0 2px 8px #4a2a1414}.rlink:hover{background:var(--yellow)}
+.kid{display:block;width:100%;text-align:left;margin:5px 0;min-height:40px;box-shadow:0 2px 8px #4a2a1414}
+#side .kid{min-height:34px;font-size:13px;margin:4px 0}
+.backbtn{width:100%;margin-top:12px;background:var(--ink);color:#fff}
+#footer{max-width:calc(100% - 24px);text-align:center}
 #checkTip{position:fixed;top:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;z-index:6;display:none}
 body.checking #checkTip{display:block}
 .ck{display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;margin:6px 0;padding:8px 10px;min-height:44px;cursor:pointer;font-weight:700}
 #side .ck input{width:22px;height:22px;min-height:0;margin:0;flex:none;accent-color:var(--coral)}
-@media (max-width:800px){#hud{z-index:8}#card{padding-bottom:130px}#checkTip{top:auto;bottom:100px;font-size:12px}#brand h1{font-size:22px}}
+@media (max-width:800px){#footer{font-size:10.5px;white-space:nowrap}#tools{max-width:150px}#tools button{min-height:38px;font-size:13px;padding:0 10px}#bBack{font-size:13px}#hud{z-index:8}#card{padding-bottom:130px}#checkTip{top:auto;bottom:100px;font-size:12px}#brand h1{font-size:22px}}
 @media (max-width:800px){
  #brand{padding:8px 12px;right:72px}#brand h1{font-size:18px}
  #tools{flex-direction:column;left:auto;right:12px;top:12px}
@@ -72,11 +80,11 @@ body.checking #checkTip{display:block}
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 </head><body>
 <div id="app"></div>
-<div id="loading"><b>保險保障島</b><p id="loadMsg">正在組合保障城市…</p></div>
-<div id="brand" class="glass"><div class="eyebrow">Protection Island</div><h1>保險保障島</h1><small>12 座島，看懂 12 種保障</small></div>
-<div id="tools"><button id="bHome" title="全景">⌂ 全景</button><button id="bList" aria-pressed="false">☰ 清單</button><button id="bHelp">?</button></div>
+<div id="loading"><b>保險保障島</b><p id="loadMsg">正在組合保障群島…</p></div>
+<div id="brand" class="glass"><div class="eyebrow">Protection Island</div><h1>保險保障島</h1><small>富邦金控服務導覽 × 保障觀念｜業務員 梁仕翰</small></div>
+<div id="tools"><button id="bHome" title="全景">⌂ 全景</button><button id="bList" aria-pressed="false">☰ 清單</button><button id="bBack">← 返回金控全景</button><button id="bHelp">?</button></div>
 <aside id="card" class="glass" aria-live="polite"><div class="grip"></div><button id="closeCard" aria-label="關閉">✕</button><div id="cardBody"></div></aside>
-<aside id="side" class="glass"><div class="grip"></div><div class="eyebrow">保障主題</div><input id="q" placeholder="搜尋：例如 住院、長照、出國…"><div id="list"></div></aside>
+<aside id="side" class="glass"><div class="grip"></div><div class="eyebrow">富邦金控服務 · 保障主題</div><input id="q" placeholder="搜尋：例如 住院、長照、車險…"><div id="list"></div></aside>
 <div id="hud" class="glass">
  <span id="clock">10:00</span>
  <button id="timeBtn"><i>◷</i>時間</button>
@@ -86,14 +94,13 @@ body.checking #checkTip{display:block}
  <button id="bPause" aria-pressed="false"><i>⏸</i>暫停</button><button id="bBird" aria-pressed="false"><i>🛰</i>鳥瞰</button>
 </div>
 <div id="help"><div class="box glass"><div class="eyebrow">How to</div><h2>怎麼逛保障島</h2>
-<ol><li>拖曳旋轉、滾輪或雙指縮放。</li><li>點一座島，看這份保障「保什麼、誰需要、常見迷思」。</li><li>用下方按鈕切換日夜，小人們會在島之間走動。</li></ol>
+<ol><li>拖曳旋轉、滾輪或雙指縮放。</li><li>點「富邦人壽」或「富邦產險」，會升起各種保障小島；點小島看「保什麼、誰需要、常見迷思」與延伸閱讀。按「返回金控全景」回到全景。</li><li>用下方按鈕切換日夜，小人們會在島之間走動。</li></ol>
 <p style="font-size:12px;color:#6b5d55">本頁為一般保險觀念說明，非特定商品內容；實際保障以契約條款為準，規劃請與顧問討論。</p>
 <button id="helpOk" style="background:var(--ink);color:#fff;width:100%">開始逛</button></div></div>
-<div id="checkTip">健檢模式：點島嶼標記「已有」，再點一次取消</div>
-<div id="footer">保險顧問 梁仕翰</div>
+<div id="checkTip">健檢模式：點人壽／產險的保障小島標記「已有」，再點一次取消</div>
+<div id="footer">富邦人壽 業務員 梁仕翰 個人介紹頁，實際商品與服務以公司公告為準</div>
 <script type="module">
-const DATA={
- islands:[
+const OLD=[
  {id:'med',gap:'住院、手術的自費項目可能是一筆不小的支出。',items:'住院日額,實支實付,手術給付,門診手術'.split(','),n:'醫療險',icon:'🏥',q:0,r:0,model:'clinic',tile:'brick',col:'#f2b5c6',
   cover:'補貼住院、手術、門診手術等醫療費用；常見分為實支實付（依收據理賠）與日額型（依住院天數給付）。',
   who:'幾乎每個人；特別是剛出社會、家庭經濟支柱，或擔心健保不給付的自費項目。',
@@ -142,9 +149,48 @@ const DATA={
   cover:'透過年金、儲蓄型或其他長期規劃工具，為退休生活或特定目標累積資金。',
   who:'想及早準備退休金、子女教育金，或希望強迫儲蓄的人。',
   myth:'「保障先不用，先存錢就好。」若保障不足，一場意外或疾病可能打亂整個儲蓄計畫，兩者應兼顧。'}
- ],
- routes:[['med','ci'],['ci','can'],['acc','dis'],['ltc','dem'],['life','ret'],['trv','acc'],['car','lia'],['med','ltc'],['ret','ltc'],['dis','life']],
-};
+];const O=Object.fromEntries(OLD.map(d=>[d.id,d]));
+const LK=(slug,t)=>({href:'https://dashin-team.github.io/'+slug+'/',t});
+O.med.n='醫療/實支實付';O.med.links=[LK('surgery-insurance-guide','實支實付＆手術險：手術、處置、門診手術一次看懂')];
+O.ci.n='重大傷病';O.ci.links=[LK('critical-illness','認識重大傷病：風險與保障規劃'),LK('cia-cib-cancer','男癌／女癌試算')];
+O.can.n='癌症';O.can.links=[LK('cancer-risk-map','癌症風險地圖：如果罹癌，需要準備多少錢？'),LK('cancer-risk-quiz','我們與癌的距離：10 題生活風險檢測'),LK('cia-cib-cancer','男癌／女癌試算')];
+const LTC={...O.ltc,id:'ltc',n:'失能/長照/失智',icon:'🧓',model:'house',items:'失能等級,長照狀態認定,失智程度認定,一次金/分期給付'.split(','),
+ gap:'若因病或意外需要長期照顧或無法工作，相關費用與收入缺口可能持續多年。',
+ cover:'失能險看「失能等級」、長照險看「長期照顧狀態」、失智險看「失智程度」，三者的給付認定方式不同，可依需求搭配，提供一次金或分期給付。',
+ who:'靠工作收入養家的人、想為老後照顧預作準備，或不想讓家人承擔照顧負擔的人。',
+ myth:'「失能、長照、失智都差不多。」三者的定義與理賠條件不同，同一個狀況不一定三種都符合，需看條款的認定方式。',
+ links:[LK('ltc-compare-v2','失能險、長照險、失智險，差在哪？')]};
+O.acc.n='意外';O.acc.links=[LK('accident-insurance-guide','意外險教學：理賠項目、職業等級與失能表'),LK('accident-insurance','骨折險報價系統')];
+O.life.links=[LK('estate-tax-planner','遺產稅・贈與稅：傳承規劃與預留稅源')];
+const INV={id:'inv',n:'投資型',icon:'📈',model:'lab',tile:'dots',col:'#6f7fb5',items:'保障＋投資,投資標的,費用結構,風險屬性'.split(','),
+ gap:'若想兼顧保障與長期資產累積，可了解投資型保單的運作方式與風險。',
+ cover:'結合人身保險保障與投資功能，保單價值會隨所選投資標的的表現而變動。',
+ who:'了解並能承受投資風險、希望在保障之外兼顧長期資產累積的人。',
+ myth:'「投資型保單保證獲利。」投資標的有漲有跌，可能損及本金；購買前應了解費用、風險與自己的風險承受度。'};
+O.car.links=[LK('car-quote','汽機車險即時報價系統'),LK('fubon-car-insurance-guide','車險健檢互動教學'),LK('nanen-car-claim-guide','車禍理賠流程')];
+O.trv.n='旅平險';O.trv.links=[LK('travel-insurance-guide','旅平險大補給')];
+O.lia.n='責任險（含教師責任險）';O.lia.items=['個人責任','公共意外責任','專業責任','教師責任'];
+O.lia.cover+='教師責任險則是針對老師在教學與校園活動中，可能須負擔的賠償責任。';O.lia.who=O.lia.who.replace('從事專業服務','從事專業服務（例如老師）');
+O.lia.links=[LK('teacher-liability','教師責任險｜老師您好')];
+const REF='可協助轉介，由專業同仁服務。實際服務內容以該公司公告為準。';
+const MAIN=[
+ {id:'g_life',n:'富邦人壽',icon:'🛡️',x:0,z:0,s:1.45,model:'hall',tile:'brick',col:'#db6a41',sub:'life',items:'壽險,醫療,癌症,長照,意外,退休,投資型'.split(','),
+  desc:'提供壽險、醫療、癌症、失能長照、意外、年金與投資型等人身保險。我是富邦人壽業務員，這座島是我主要服務的範圍。'},
+ {id:'g_prop',n:'富邦產險',icon:'🚗',x:5.7,z:.9,s:1,model:'garage',tile:'stripe',col:'#58a6a6',sub:'prop',items:'車險,旅遊相關保險,責任險,住宅火險'.split(','),
+  desc:'提供車險、旅遊相關保險、責任險與住宅火險等財產與責任保險。'},
+ {id:'g_bank',n:'台北富邦銀行',icon:'🏦',x:-5.5,z:1.6,s:1,model:'bank',tile:'dots',col:'#71806a',ref:true,items:'存款,信用卡,房屋/個人貸款,財富管理'.split(','),
+  desc:'提供存款、信用卡、房屋與個人貸款、財富管理等銀行服務。'},
+ {id:'g_sec',n:'富邦證券',icon:'📊',x:-2.4,z:-5.3,s:1,model:'shop',tile:'brick',col:'#6f7fb5',ref:true,items:'股票交易,ETF,財富管理'.split(','),
+  desc:'提供股票與 ETF 交易、財富管理等證券相關服務。'},
+ {id:'g_sitc',n:'富邦投信',icon:'💼',x:3.3,z:-5.0,s:1,model:'lab',tile:'dots',col:'#fcea8b',ref:true,items:'共同基金,ETF,資產管理'.split(','),
+  desc:'提供共同基金、ETF 等資產管理服務。'}];
+const SUBS={life:{anchor:[-4.5,10.5],ids:['med','ci','can','ltc','acc','life','ret','inv'],ax:[[0,0],[1,0],[-1,0],[0,-1],[1,-1],[-1,1],[0,1],[2,-1]]},
+ prop:{anchor:[9,9],ids:['car','trv','lia'],ax:[[0,0],[1,0],[0,1]]}};
+const COV=[];
+for(const k in SUBS){const S=SUBS[k];S.ids.forEach((id,j)=>{const d=id==='ltc'?LTC:id==='inv'?INV:O[id];Object.assign(d,{level:2,parent:k,s:1,q:S.ax[j][0],r:S.ax[j][1],num:j+1});d.links=d.links||[];COV.push(d)})}
+MAIN.forEach(d=>d.level=1);
+const DATA={islands:[...MAIN,...COV],
+ routes:[['g_life','g_prop'],['g_life','g_bank'],['g_life','g_sec'],['g_life','g_sitc'],['g_bank','g_prop'],['g_sec','g_sitc']]};
 import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {CSS2DRenderer,CSS2DObject} from 'three/addons/renderers/CSS2DRenderer.js';
@@ -170,8 +216,11 @@ const scene=new THREE.Scene();scene.fog=new THREE.Fog(0xf4eee3,42,150);
 const camera=new THREE.PerspectiveCamera(32,1,.3,320);
 const controls=new OrbitControls(camera,renderer.domElement);
 Object.assign(controls,{enableDamping:true,dampingFactor:.07,enablePan:false,minPolarAngle:25*Math.PI/180,maxPolarAngle:70*Math.PI/180,minDistance:3,maxDistance:70});
-const ax=(q,r)=>new THREE.Vector3(Math.sqrt(3)*SP*(q+r/2),0,1.5*SP*r);
-const center=new THREE.Vector3();DATA.islands.forEach(d=>{d.pos=ax(d.q,d.r);center.add(d.pos)});center.divideScalar(DATA.islands.length);
+const V0=(x,y,z)=>new THREE.Vector3(x,y,z);const ax=(q,r)=>new THREE.Vector3(Math.sqrt(3)*SP*(q+r/2),0,1.5*SP*r);
+const center=new THREE.Vector3();MAIN.forEach(d=>{d.pos=V0(d.x,0,d.z);d.layer='main';center.add(d.pos)});center.divideScalar(MAIN.length);
+COV.forEach(d=>{const A=SUBS[d.parent].anchor;d.pos=ax(d.q,d.r).add(V0(A[0],0,A[1]));d.layer=d.parent});
+for(const k in SUBS){const c=V0(0,0,0);COV.filter(d=>d.parent===k).forEach(d=>c.add(d.pos));SUBS[k].center=c.divideScalar(SUBS[k].ids.length)}
+const layerG={main:new THREE.Group(),life:new THREE.Group(),prop:new THREE.Group()};for(const k in layerG){scene.add(layerG[k]);if(k!=='main'){layerG[k].position.y=-2.6;layerG[k].visible=false;layerG[k].userData.ty=-2.6}}
 // sky
 const skyU={uTop:{value:new THREE.Color()},uHorizon:{value:new THREE.Color()},uSunDir:{value:new THREE.Vector3(0,1,0)},uSun:{value:new THREE.Color()},uNight:{value:0}};
 scene.add(new THREE.Mesh(new THREE.SphereGeometry(170,32,16),new THREE.ShaderMaterial({side:THREE.BackSide,depthWrite:false,fog:false,uniforms:skyU,
@@ -212,8 +261,8 @@ function groundTex(kind,base){const c=document.createElement('canvas');c.width=c
 const texes={brick:groundTex('brick','#efe3cf'),dots:groundTex('dots','#e7e9cf'),stripe:groundTex('stripe','#f1e2d6')};
 // kit
 const kit=[];const push=(kind,pos,scl,color,rot=0,glow=false)=>{const m=new THREE.Matrix4();const j=1+(rnd()*2-1)*.0072;
- m.compose(pos,new THREE.Quaternion().setFromEuler(new THREE.Euler(0,rot,0)),new THREE.Vector3(scl.x*j,scl.y*j,scl.z*j));kit.push({kind:glow?'glow'+kind:kind,m,color,owner:curOwner,small:curSmall})};
-let curOwner=null,curSmall=false;
+ m.compose(pos,new THREE.Quaternion().setFromEuler(new THREE.Euler(0,rot,0)),new THREE.Vector3(scl.x*j,scl.y*j,scl.z*j));kit.push({kind:glow?'glow'+kind:kind,m,color,owner:curOwner,small:curSmall,layer:curLayer})};
+let curOwner=null,curSmall=false,curLayer='main';
 const G={box:new THREE.BoxGeometry(1,1,1).translate(0,.5,0),rbox:new RoundedBoxGeometry(1,1,1,2,.12).translate(0,.5,0),cylinder:new THREE.CylinderGeometry(.5,.5,1,14).translate(0,.5,0),
  cone:new THREE.ConeGeometry(.5,1,14).translate(0,.5,0),sphere:new THREE.SphereGeometry(.5,16,12),ico:new THREE.IcosahedronGeometry(.5,1),
  hip:new THREE.ConeGeometry(.72,1,4).rotateY(Math.PI/4).translate(0,.5,0),torus:new THREE.TorusGeometry(.4,.1,8,20)};
@@ -241,57 +290,57 @@ const glowMat=new THREE.MeshStandardMaterial({roughness:.6,emissive:new THREE.Co
 // islands
 const islandGroup=new THREE.Group();scene.add(islandGroup);const pick=[];const labels=[];
 const sideMat=new THREE.MeshStandardMaterial({color:'#e8d9c3',roughness:.9});
-DATA.islands.forEach((d,i)=>{const g=new THREE.Group();g.position.copy(d.pos);islandGroup.add(g);d.group=g;
+DATA.islands.forEach((d,i)=>{const g=new THREE.Group();g.position.copy(d.pos);layerG[d.layer].add(g);d.group=g;curLayer=d.layer;const sc=d.s,R=2.02*sc;
  const topGeo=new THREE.CircleGeometry(R-.05,6).rotateZ(Math.PI/6).rotateX(-Math.PI/2);
  const uv=topGeo.attributes.uv,p=topGeo.attributes.position;for(let k=0;k<uv.count;k++)uv.setXY(k,(p.getX(k)+d.pos.x)/2.2,(p.getZ(k)+d.pos.z)/2.2);
  const top=new THREE.Mesh(topGeo,new THREE.MeshStandardMaterial({map:texes[d.tile],roughness:.92}));top.position.y=TOP;top.receiveShadow=true;top.userData.island=d;g.add(top);pick.push(top);
  const body=new THREE.Mesh(new THREE.CylinderGeometry(R,R*1.04,TOP-WY+.1,6).rotateY(Math.PI/6),sideMat);body.position.y=(TOP+WY)/2-.05;body.receiveShadow=body.castShadow=true;body.userData.island=d;g.add(body);pick.push(body);
  const band=new THREE.Mesh(new THREE.CylinderGeometry(R+.01,R+.01,.16,6,1,true).rotateY(Math.PI/6),new THREE.MeshStandardMaterial({color:d.col,roughness:.8}));band.position.y=TOP-.08;g.add(band);
- const path=new THREE.Mesh(new THREE.RingGeometry(1.66,1.94,6).rotateZ(Math.PI/6).rotateX(-Math.PI/2),new THREE.MeshStandardMaterial({color:'#e9c9a8',roughness:.9,polygonOffset:true,polygonOffsetFactor:-1}));path.position.y=TOP+.002;path.receiveShadow=true;g.add(path);
+ const path=new THREE.Mesh(new THREE.RingGeometry(1.66*sc,1.94*sc,6).rotateZ(Math.PI/6).rotateX(-Math.PI/2),new THREE.MeshStandardMaterial({color:'#e9c9a8',roughness:.9,polygonOffset:true,polygonOffsetFactor:-1}));path.position.y=TOP+.002;path.receiveShadow=true;g.add(path);
  const foam=new THREE.Mesh(new THREE.RingGeometry(R,R+.16,6).rotateZ(Math.PI/6).rotateX(-Math.PI/2),new THREE.MeshBasicMaterial({color:'#fff',transparent:true,opacity:.55}));foam.position.y=WY+.01;g.add(foam);
  const shal=new THREE.Mesh(new THREE.CircleGeometry(R+.7,6).rotateZ(Math.PI/6).rotateX(-Math.PI/2),new THREE.MeshBasicMaterial({color:'#bfe3e3',transparent:true,opacity:.45,polygonOffset:true,polygonOffsetFactor:-1}));shal.position.y=WY+.005;g.add(shal);
  // building
- curOwner=d;arche(d.model,d.pos.clone().add(V(0,TOP,-.58)),1.0,d.col,0);
+ curOwner=d;arche(d.model,d.pos.clone().add(V(0,TOP,-.58*sc)),sc,d.col,0);
  const SUBM=['house','shop','garden','clinic','bank','workshop','busstop','lab'],SLOT=[[-.82,.3],[.82,.3],[0,.62],[-.95,-.45],[.95,-.45]];
- d.items.forEach((it,k)=>{const sl=SLOT[k%5];arche(SUBM[(i+k)%SUBM.length],d.pos.clone().add(V(sl[0],TOP,sl[1])),.46,d.col,(k-1)*.4)});
+ d.items.slice(0,5).forEach((it,k)=>{const sl=SLOT[k%5];arche(SUBM[(i+k)%SUBM.length],d.pos.clone().add(V(sl[0]*sc,TOP,sl[1]*sc)),.46*Math.sqrt(sc),d.col,(k-1)*.4)});
  // street furniture
  curSmall=true;
- for(let k=0;k<6;k++){const a=Math.PI/6+k*Math.PI/3+Math.PI/2,v=d.pos.clone().add(V(Math.cos(a)*1.8,TOP,Math.sin(a)*1.8));
+ for(let k=0;k<6;k++){const a=Math.PI/6+k*Math.PI/3+Math.PI/2,v=d.pos.clone().add(V(Math.cos(a)*1.8*sc,TOP,Math.sin(a)*1.8*sc));
   push('cylinder',v,V(.04,.5,.04),'#211d1d');push('glowsphere',v.clone().add(V(0,.52,0)),V(.1,.1,.1),'#fff8f4',0,true);}
- const treeT=i%4;for(let k=0;k<5;k++){const a=k*1.25+i,rr=1.25+rnd()*.15,v=d.pos.clone().add(V(Math.cos(a)*rr,TOP,Math.sin(a)*rr));if(v.z-d.pos.z>.9&&Math.abs(v.x-d.pos.x)<.6)continue;
+ const treeT=i%4;for(let k=0;k<5;k++){const a=k*1.25+i,rr=(1.25+rnd()*.15)*sc,v=d.pos.clone().add(V(Math.cos(a)*rr,TOP,Math.sin(a)*rr));if(v.z-d.pos.z>.9&&Math.abs(v.x-d.pos.x)<.6)continue;
   push('cylinder',v,V(.07,.3,.07),'#b48560');
   if(treeT===0){push('cone',v.clone().add(V(0,.22,0)),V(.4,.6,.4),'#728f5f')}else if(treeT===1){push('ico',v.clone().add(V(0,.45,0)),V(.45,.4,.45),'#f2b5c6')}
   else if(treeT===2){push('ico',v.clone().add(V(0,.45,0)),V(.42,.42,.42),'#8db86f');push('sphere',v.clone().add(V(.1,.5,.15)),V(.08,.08,.08),'#db6a41')}else{push('sphere',v.clone().add(V(0,.4,0)),V(.5,.3,.5),'#9cc27a')}}
  push('box',d.pos.clone().add(V(.5,TOP,1.05)),V(.3,.08,.1),'#b48560',.5);
- for(let k=0;k<18;k++){const a=k/18*Math.PI*2+i,rr=1.55+rnd()*.12,v=d.pos.clone().add(V(Math.cos(a)*rr,TOP,Math.sin(a)*rr));
+ for(let k=0;k<18;k++){const a=k/18*Math.PI*2+i,rr=(1.55+rnd()*.12)*sc,v=d.pos.clone().add(V(Math.cos(a)*rr,TOP,Math.sin(a)*rr));
   if(k%3===0)push('ico',v,V(.16,.13,.16),'#8db86f');else push('sphere',v.add(V(0,.03,0)),V(.06,.06,.06),['#f2b5c6','#fcea8b','#fff8f4','#db6a41'][k%4])}
- curSmall=false;curOwner=null;
+ curSmall=false;curOwner=null;curLayer='main';
  // label
- const el=document.createElement('div');el.className='lbl';el.innerHTML=`<em>${String(i+1).padStart(2,'0')}</em>${d.icon} ${d.n}`;el.onclick=()=>selectIsland(d);
- const lb=new CSS2DObject(el);lb.position.set(0,TOP+.25,R*.86);g.add(lb);d.label=el;labels.push(el);
+ const el=document.createElement('div');el.className='lbl';el.innerHTML=d.level===1?`${d.icon} ${d.n}${d.sub?' <em style="margin:0 0 0 4px">▸</em>':''}`:`<em>${String(d.num).padStart(2,'0')}</em>${d.icon} ${d.n}`;if(d.level===1)el.classList.add('main');el.onclick=()=>selectIsland(d);
+ const lb=new CSS2DObject(el);lb.position.set(0,TOP+.25,R*.86);g.add(lb);d.label=el;d.lb=lb;labels.push(el);
 });
 // neighbours + bridges + nav graph
 const nodes=[];const adj=[];const addEdge=(a,b)=>{const w=nodes[a].distanceTo(nodes[b]);adj[a].push([b,w]);adj[b].push([a,w])};
-DATA.islands.forEach(d=>{d.nodes=[];for(let k=0;k<12;k++){const vert=k%2===0,idx=Math.floor(k/2);const a=-Math.PI/2+idx*Math.PI/3+(vert?0:Math.PI/6);const rr=vert?1.8:1.8*Math.cos(Math.PI/6);
+DATA.islands.forEach(d=>{d.nodes=[];for(let k=0;k<12;k++){const vert=k%2===0,idx=Math.floor(k/2);const a=-Math.PI/2+idx*Math.PI/3+(vert?0:Math.PI/6);const rr=(vert?1.8:1.8*Math.cos(Math.PI/6))*d.s;
  nodes.push(d.pos.clone().add(V(Math.cos(a)*rr,TOP+.01,Math.sin(a)*rr)));adj.push([]);d.nodes.push(nodes.length-1)}
  for(let k=0;k<12;k++)addEdge(d.nodes[k],d.nodes[(k+1)%12])});
 const deckMat=new THREE.MeshStandardMaterial({color:'#b48560',roughness:.85});
-for(let i=0;i<DATA.islands.length;i++)for(let j=i+1;j<DATA.islands.length;j++){const a=DATA.islands[i],b=DATA.islands[j];if(a.pos.distanceTo(b.pos)>Math.sqrt(3)*SP+.1)continue;
+for(let i=0;i<DATA.islands.length;i++)for(let j=i+1;j<DATA.islands.length;j++){const a=DATA.islands[i],b=DATA.islands[j];if(a.layer!==b.layer||a.pos.distanceTo(b.pos)-R*(a.s+b.s)>1.4)continue;
  const dir=b.pos.clone().sub(a.pos).normalize();let na=a.nodes[0],nb=b.nodes[0],best=1e9,bb=1e9;
  a.nodes.forEach(n=>{const s=-nodes[n].clone().sub(a.pos).dot(dir);if(s<best){best=s;na=n}});b.nodes.forEach(n=>{const s=nodes[n].clone().sub(b.pos).dot(dir);if(s<bb){bb=s;nb=n}});
  addEdge(na,nb);const A=nodes[na],B=nodes[nb],len=A.distanceTo(B),rot=Math.atan2(dir.x,dir.z);
- for(let k=0;k<9;k++){const t=(k+.5)/9,p=A.clone().lerp(B,t);p.y+=Math.sin(t*Math.PI)*.08;const m=new THREE.Mesh(new THREE.BoxGeometry(.4,.05,len/9*.92),deckMat);m.position.copy(p);m.rotation.y=rot;m.castShadow=true;scene.add(m)}}
+ for(let k=0;k<9;k++){const t=(k+.5)/9,p=A.clone().lerp(B,t);p.y+=Math.sin(t*Math.PI)*.08;const m=new THREE.Mesh(new THREE.BoxGeometry(.4,.05,len/9*.92),deckMat);m.position.copy(p);m.rotation.y=rot;m.castShadow=true;layerG[a.layer].add(m)}}
 function dijkstra(s,t){const dist=nodes.map(()=>1e9),prev=nodes.map(()=>-1),done=new Set();dist[s]=0;
  while(true){let u=-1,b=1e9;for(let i=0;i<nodes.length;i++)if(!done.has(i)&&dist[i]<b){b=dist[i];u=i}if(u<0||u===t)break;done.add(u);for(const[v,w]of adj[u])if(dist[u]+w<dist[v]){dist[v]=dist[u]+w;prev[v]=u}}
  const path=[];for(let u=t;u>=0;u=prev[u])path.unshift(nodes[u].clone());return path}
 // build instanced kit
 const byId=Object.fromEntries(DATA.islands.map(d=>[d.id,d]));
-const groups={};kit.forEach(k=>{const key=k.kind+(k.small?'_s':'');(groups[key]=groups[key]||[]).push(k)});
+const groups={};kit.forEach(k=>{const key=k.layer+'|'+k.kind+(k.small?'_s':'');(groups[key]=groups[key]||[]).push(k)});
 const smallMeshes=[];const instMeshes=[];
-for(const key in groups){const arr=groups[key],kind=key.replace('_s','');const glow=kind.startsWith('glow');
+for(const key in groups){const arr=groups[key],kind=key.split('|')[1].replace('_s',''),lay=key.split('|')[0];const glow=kind.startsWith('glow');
  const im=new THREE.InstancedMesh(G[kind],glow?glowMat:solidMat,arr.length);im.castShadow=!glow;im.receiveShadow=true;
  arr.forEach((k,i)=>{im.setMatrixAt(i,k.m);k.base=new THREE.Color(k.color);im.setColorAt(i,k.base)});im.userData.items=arr;
- scene.add(im);instMeshes.push(im);if(key.endsWith('_s'))smallMeshes.push(im);else pick.push(im)}
+ layerG[lay].add(im);instMeshes.push(im);if(key.endsWith('_s'))smallMeshes.push(im);else pick.push(im)}
 // background terrain
 const simplex=new SimplexNoise({random:mulberry32(7)});
 const tg=new THREE.PlaneGeometry(170,170,mobile?100:160,mobile?100:160).rotateX(-Math.PI/2);const tp=tg.attributes.position;const cols=[];
@@ -320,15 +369,15 @@ for(let i=0;i<12;i++){const g=new THREE.Group();for(let k=0;k<5;k++){const m=new
 const lh=new THREE.Group();lh.add(Object.assign(new THREE.Mesh(new THREE.CylinderGeometry(.3,.45,2.2,12),new THREE.MeshStandardMaterial({color:'#fff8f4'})),{}));
 const lamp=new THREE.Mesh(new THREE.SphereGeometry(.28,12,8),glowMat);lamp.position.y=1.3;lh.add(lamp);lh.position.set(center.x-14,1,center.z+6);scene.add(lh);
 const boat=new THREE.Group();boat.add(new THREE.Mesh(new THREE.BoxGeometry(1,.25,.4),new THREE.MeshStandardMaterial({color:'#b48560'})));
-const sail=new THREE.Mesh(new THREE.ConeGeometry(.4,1.1,3),new THREE.MeshStandardMaterial({color:'#fff8f4'}));sail.position.y=.65;boat.add(sail);boat.position.set(center.x+12,WY+.1,center.z+9);scene.add(boat);
+const sail=new THREE.Mesh(new THREE.ConeGeometry(.4,1.1,3),new THREE.MeshStandardMaterial({color:'#fff8f4'}));sail.position.y=.65;boat.add(sail);boat.position.set(center.x+12,WY+.1,center.z-14);
 const isleMat=new THREE.MeshStandardMaterial({color:'#e7d6b8',roughness:.95}),grassMat=new THREE.MeshStandardMaterial({color:'#aec493',roughness:.95});
-for(let k=0;k<9;k++){const a=k/9*Math.PI*2+.3,r=15+rnd()*4,x=center.x+Math.cos(a)*r,z=center.z+Math.sin(a)*r*.8,s=.9+rnd()*.9;
+for(let k=0;k<9;k++){const a=k/9*Math.PI*2+.3,r=21+rnd()*3,x=center.x+Math.cos(a)*r,z=center.z+Math.sin(a)*r*.8,s=.9+rnd()*.9;
  const b=new THREE.Mesh(new THREE.CylinderGeometry(1.6*s,1.8*s,.5,18),isleMat);b.position.set(x,WY+.1,z);b.receiveShadow=b.castShadow=true;scene.add(b);
  const g=new THREE.Mesh(new THREE.CylinderGeometry(1.35*s,1.5*s,.12,18),grassMat);g.position.set(x,WY+.4,z);g.receiveShadow=true;scene.add(g);
  for(let t=0;t<3;t++){const tr=new THREE.Mesh(new THREE.IcosahedronGeometry(.35,1),new THREE.MeshStandardMaterial({color:'#8db86f',roughness:.8}));tr.position.set(x+(rnd()-.5)*1.6*s,WY+.85,z+(rnd()-.5)*1.4*s);tr.castShadow=true;scene.add(tr)}
  if(k%3===0){const t=new THREE.Group();for(let q=0;q<4;q++){const c=new THREE.Mesh(new THREE.CylinderGeometry(.22-q*.02,.25-q*.02,.32,12),new THREE.MeshStandardMaterial({color:q%2?'#db6a41':'#fff8f4'}));c.position.y=.16+q*.32;c.castShadow=true;t.add(c)}
   const lp=new THREE.Mesh(new THREE.SphereGeometry(.16,10,8),glowMat);lp.position.y=1.45;t.add(lp);t.position.set(x,WY+.45,z);scene.add(t)}}
-const boats=[];for(let k=0;k<6;k++){const bt=boat.clone();bt.userData.a=k/6*Math.PI*2;bt.userData.r=11+rnd()*6;scene.add(bt);boats.push(bt)}
+const boats=[];for(let k=0;k<6;k++){const bt=boat.clone();bt.userData.a=k/6*Math.PI*2;bt.userData.r=20+rnd()*4;scene.add(bt);boats.push(bt)}
 // walkers
 const ACC=['vest','coat','cane','cap','stroller','bike','hat','helmet','suitcase'];
 const skin=['#f3d2b5','#e8bf9c','#d9a982'],shirts=['#db6a41','#58a6a6','#6f7fb5','#fcea8b','#71806a','#f2b5c6','#fff8f4'];
@@ -390,57 +439,79 @@ const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 // selection
 let selected=null;
 function highlight(){instMeshes.forEach(im=>{im.userData.items.forEach((k,i)=>{const c=k.base.clone();if(selected&&k.owner===selected)c.lerp(C('db6a41'),.22);im.setColorAt(i,c)});im.instanceColor.needsUpdate=true})}
-function selectIsland(d){if(checking){toggleHave(d);return}selected=d;labels.forEach(l=>l.classList.remove('sel','dim'));d.label.classList.add('sel');labels.forEach(l=>{if(l!==d.label)l.classList.add('dim')});
+function linksHTML(d){return d.links&&d.links.length?`<div class="sec"><h3>延伸閱讀</h3>${d.links.map(l=>`<a class="rlink" href="${l.href}" target="_blank" rel="noopener">${l.t} ↗</a>`).join('')}</div>`:''}
+function selectIsland(d){if(checking){if(d.level===2)toggleHave(d);return}
+ if(d.level===1){selectMain(d);return}if(active!==d.parent)setLevel(d.parent,false);selected=d;labels.forEach(l=>l.classList.remove('sel','dim'));d.label.classList.add('sel');labels.forEach(l=>{if(l!==d.label)l.classList.add('dim')});
  highlight();tubes.forEach(t=>t.visible=t.userData.rt.includes(d.id));
  const i=DATA.islands.indexOf(d);
- $('#cardBody').innerHTML=`<div class="eyebrow">ISLAND ${String(i+1).padStart(2,'0')}</div><h2><span class="itile">${d.icon}</span>${d.n}</h2><div class="chips">${d.items.map(x=>`<span class="chip">${x}</span>`).join("")}</div>
+ $('#cardBody').innerHTML=`<div class="eyebrow">${d.parent==='life'?'富邦人壽':'富邦產險'} · ${String(d.num).padStart(2,'0')}</div><h2><span class="itile">${d.icon}</span>${d.n}</h2><div class="chips">${d.items.map(x=>`<span class="chip">${x}</span>`).join("")}</div>
  <div class="sec"><h3>保什麼</h3><p>${d.cover}</p></div><div class="sec"><h3>誰需要</h3><p>${d.who}</p></div>
  <div class="sec myth"><h3 style="color:var(--ink)"><b>常見迷思</b></h3><p>${d.myth}</p></div>
- <p style="font-size:12px;color:#6b5d55">一般觀念說明，實際保障以契約條款為準。想檢視自己的保障缺口，歡迎找保險顧問 梁仕翰聊聊。</p>`;
+ ${linksHTML(d)}<p style="font-size:12px;color:#6b5d55">一般觀念說明，實際保障以契約條款為準。想檢視自己的保障缺口，歡迎找梁仕翰聊聊。</p>
+ <button class="backbtn" onclick="window.__back()">← 返回金控全景</button>`;
  $('#card').classList.add('open');$('#card').classList.remove('full');
  const off=V(3.6,6.9,8.1);const tgt=d.pos.clone().add(V(0,TOP,0));if(!mobile&&innerWidth>800)tgt.x-=1.5*0; const shift=(!mobile&&innerWidth>800)?V(-1.5,0,0):V(0,0,0);
  flyTo(tgt.clone().add(shift),tgt.clone().add(shift).add(off));if(innerWidth<=800)$('#side').classList.remove('open');dirty=true}
+function selectMain(d){selected=d;labels.forEach(l=>l.classList.remove('sel','dim'));d.label.classList.add('sel');highlight();tubes.forEach(t=>t.visible=t.userData.rt.includes(d.id));
+ const kids=COV.filter(c=>c.parent===d.sub);
+ $('#cardBody').innerHTML=`<div class="eyebrow">富邦金控 · 服務島</div><h2><span class="itile">${d.icon}</span>${d.n}</h2><div class="chips">${d.items.map(x=>`<span class="chip">${x}</span>`).join('')}</div>
+ <div class="sec"><p>${d.desc}</p></div>
+ ${d.sub?`<div class="sec"><h3>島上的保障（點選查看）</h3>${kids.map(c=>`<button class="kid" data-id="${c.id}">${String(c.num).padStart(2,'0')} ${c.icon} ${c.n} →</button>`).join('')}</div>`:`<div class="sec myth"><p><b>${REF}</b></p></div>`}
+ <p style="font-size:12px;color:#6b5d55">本頁為富邦人壽業務員梁仕翰的個人介紹頁，非公司官方網站。</p>${d.sub?'<button class="backbtn" onclick="window.__back()">← 返回金控全景</button>':''}`;
+ $('#cardBody').querySelectorAll('.kid').forEach(b=>b.onclick=()=>selectIsland(byId[b.dataset.id]));
+ $('#card').classList.add('open');$('#card').classList.remove('full');if(innerWidth<=800)$('#side').classList.remove('open');
+ if(d.sub)setLevel(d.sub,true);else{const shift=innerWidth>800?V(-1.5,0,0):V(0,0,0);const t=d.pos.clone().add(V(0,TOP,0)).add(shift);flyTo(t,t.clone().add(V(3.6,6.9,8.1)))}dirty=true}
+let active=null;
+function showLayer(k,on){const g=layerG[k];g.userData.ty=on?0:-2.6;if(on){g.visible=true;if(reduced)g.position.y=0}}
+function setLevel(k,fly){active=k;for(const l of ['life','prop'])showLayer(l,l===k||checking);document.body.classList.add('inlevel');
+ if(fly!==false){const c=SUBS[k].center.clone().add(V(0,TOP,0));const shift=innerWidth>800?V(-2.2,0,0):V(0,0,1.5);const dist=k==='life'?(innerWidth/innerHeight>1?24:42):(innerWidth/innerHeight>1?16:30);
+  flyTo(c.clone().add(shift),c.clone().add(shift).add(V(.24,.62,.75).normalize().multiplyScalar(dist)))}dirty=true}
+function backToGroup(){if(checking)setCheck(false);active=null;for(const l of ['life','prop'])showLayer(l,false);document.body.classList.remove('inlevel');selected=null;
+ $('#card').classList.remove('open');labels.forEach(l=>l.classList.remove('sel','dim'));highlight();tubes.forEach(t=>t.visible=false);goHome();renderList();dirty=true}
+window.__back=backToGroup;
 function closeCard(){if(checking){$('#card').classList.remove('open');return}selected=null;$('#card').classList.remove('open');labels.forEach(l=>l.classList.remove('sel','dim'));highlight();tubes.forEach(t=>t.visible=false);dirty=true}
 // check mode
 let checking=false;const have=new Set();
-function readHash(){const m=location.hash.match(/have=([\d,]*)/);if(!m)return false;have.clear();m[1].split(',').filter(Boolean).forEach(n=>{const d=DATA.islands[+n-1];if(d)have.add(d.id)});return true}
-function writeHash(){const ids=DATA.islands.map((d,i)=>have.has(d.id)?i+1:0).filter(Boolean);try{history.replaceState(null,'','#have='+ids.join(','))}catch(e){location.hash='have='+ids.join(',')}}
+function readHash(){const m=location.hash.match(/have=([\d,]*)/);if(!m)return false;have.clear();m[1].split(',').filter(Boolean).forEach(n=>{const d=COV[+n-1];if(d)have.add(d.id)});return true}
+function writeHash(){const ids=COV.map((d,i)=>have.has(d.id)?i+1:0).filter(Boolean);try{history.replaceState(null,'','#have='+ids.join(','))}catch(e){location.hash='have='+ids.join(',')}}
 function paintCheck(){const grey=C('bdb6b0'),warm=C('fcea8b');
- instMeshes.forEach(im=>{im.userData.items.forEach((k,i)=>{const c=k.base.clone();if(checking&&k.owner){if(have.has(k.owner.id))c.lerp(warm,.25);else c.lerp(grey,.6)}else if(selected&&k.owner===selected)c.lerp(C('db6a41'),.22);im.setColorAt(i,c)});im.instanceColor.needsUpdate=true});
- DATA.islands.forEach(d=>{d.label.classList.toggle('have',checking&&have.has(d.id));d.label.classList.toggle('miss',checking&&!have.has(d.id));
+ instMeshes.forEach(im=>{im.userData.items.forEach((k,i)=>{const c=k.base.clone();if(checking&&k.owner&&k.owner.level===2){if(have.has(k.owner.id))c.lerp(warm,.25);else c.lerp(grey,.6)}else if(selected&&k.owner===selected)c.lerp(C('db6a41'),.22);im.setColorAt(i,c)});im.instanceColor.needsUpdate=true});
+ COV.forEach(d=>{d.label.classList.toggle('have',checking&&have.has(d.id));d.label.classList.toggle('miss',checking&&!have.has(d.id));
   d.group.children.forEach(m=>{if(m.material&&m.material.color&&m.userData.island){m.material.color.set(checking&&!have.has(d.id)?'#b9b3ad':'#ffffff')}});
   if(!d.glow){d.glow=new THREE.PointLight(0xffc777,0,4.5,1.6);d.glow.position.set(0,TOP+1.2,0);d.group.add(d.glow)}d.glow.intensity=checking&&have.has(d.id)?6:0});dirty=true}
-function summary(){const miss=DATA.islands.filter(d=>!have.has(d.id));
- $('#cardBody').innerHTML=`<div class="eyebrow">保單健檢亮燈</div><h2>我的保障地圖</h2><div><span class="big">${have.size}</span><b style="font-size:20px"> / 12</b> 座島已亮燈</div>
+function summary(){const miss=COV.filter(d=>!have.has(d.id));
+ $('#cardBody').innerHTML=`<div class="eyebrow">保單健檢亮燈</div><h2>我的保障地圖</h2><div><span class="big">${have.size}</span><b style="font-size:20px"> / ${COV.length}</b> 座島已亮燈</div>
  <p style="font-size:13px;color:#6b5d55;margin:6px 0 10px">點島嶼或清單勾選「已有」。結果只存在網址中，不收集任何個人資料。</p>
- <div class="sec"><h3>缺口 ${miss.length} 座</h3>${miss.length?miss.map(d=>`<div class="gap"><b>${d.icon} ${d.n}</b>${d.gap}</div>`).join(''):'<p>12 座島都亮了！仍建議定期檢視保障內容是否符合現況。</p>'}</div>
+ <div class="sec"><h3>缺口 ${miss.length} 座</h3>${miss.length?miss.map(d=>`<div class="gap"><b>${d.icon} ${d.n}</b>${d.gap}</div>`).join(''):'<p>所有保障島都亮了！仍建議定期檢視保障內容是否符合現況。</p>'}</div>
  <a class="cta" href="#" id="ctaTalk">和梁仕翰聊聊這些缺口</a>
  <p style="font-size:11.5px;color:#6b5d55;margin-top:8px">此為一般保險觀念的自我檢視，不代表實際保障是否足夠；實際內容以契約條款為準。</p>`;
- $('#ctaTalk').onclick=e=>{e.preventDefault();const t=`您好，我用「保險保障島」健檢，已有 ${have.size}/12，想聊聊這些缺口：${miss.map(d=>d.n).join('、')||'（無）'}`;
+ $('#ctaTalk').onclick=e=>{e.preventDefault();const t=`您好，我用「保險保障島」健檢，已有 ${have.size}/${COV.length}，想聊聊這些缺口：${miss.map(d=>d.n).join('、')||'（無）'}`;
   try{navigator.clipboard.writeText(t+'\n'+location.href)}catch(_){};$('#ctaTalk').textContent='已複製健檢結果，傳給梁仕翰即可 ✓'};
  $('#card').classList.add('open')}
-function renderChecklist(){$('#list').innerHTML='';DATA.islands.forEach((d,i)=>{const l=document.createElement('label');l.className='ck';
- l.innerHTML=`<input type="checkbox" ${have.has(d.id)?'checked':''}><span class="num" style="font:italic 18px Georgia,serif;color:var(--coral)">${String(i+1).padStart(2,'0')}</span>${d.icon} ${d.n}`;
+function renderChecklist(){$('#list').innerHTML='';COV.forEach((d,i)=>{const l=document.createElement('label');l.className='ck';
+ l.innerHTML=`<input type="checkbox" ${have.has(d.id)?'checked':''}><span class="num" style="font:italic 18px Georgia,serif;color:var(--coral)">${String(i+1).padStart(2,'0')}</span>${d.icon} ${d.n}<small style="margin-left:auto;color:#8a7f78;font-weight:400">${d.parent==='life'?'人壽':'產險'}</small>`;
  l.querySelector('input').onchange=e=>{e.target.checked?have.add(d.id):have.delete(d.id);update()};$('#list').appendChild(l)})}
 function update(){writeHash();paintCheck();summary();if(checking&&$('#side').classList.contains('open'))renderChecklist()}
 function toggleHave(d){have.has(d.id)?have.delete(d.id):have.add(d.id);update()}
 function setCheck(on){checking=on;document.body.classList.toggle('checking',on);$('#bCheck').setAttribute('aria-pressed',on);$('#bCheck').innerHTML=on?'<i>✅</i>結束健檢':'<i>✅</i>開始健檢';
  selected=null;labels.forEach(l=>l.classList.remove('sel','dim'));tubes.forEach(t=>t.visible=false);
- if(on){if(innerWidth>800){$('#side').classList.add('open');$('#bList').setAttribute('aria-pressed','true')}renderChecklist();update();goHome()}
- else{renderList();paintCheck();$('#card').classList.remove('open');try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}}
+ if(on){if(innerWidth>800){$('#side').classList.add('open');$('#bList').setAttribute('aria-pressed','true')}renderChecklist();update();for(const l of ['life','prop'])showLayer(l,true);document.body.classList.add('inlevel');
+  {const c=SUBS.life.center.clone().lerp(SUBS.prop.center,.5);const sh=innerWidth>800?V(-1,0,0):V(0,0,3);flyTo(c.clone().add(sh),c.clone().add(sh).add(V(.2,.6,.77).normalize().multiplyScalar(innerWidth/innerHeight>1?36:60)))}}
+ else{renderList();paintCheck();$('#card').classList.remove('open');try{history.replaceState(null,'',location.pathname+location.search)}catch(e){};for(const l of ['life','prop'])showLayer(l,l===active);if(!active){document.body.classList.remove('inlevel');goHome()}}}
 // list
-function renderList(f=''){$('#list').innerHTML='';DATA.islands.forEach((d,i)=>{if(f&&!(d.n+d.cover+d.who+d.myth).includes(f))return;const el=document.createElement('details');
- el.innerHTML=`<summary><span class="num">${String(i+1).padStart(2,'0')}</span>${d.icon} ${d.n}</summary><p>${d.cover}</p><button style="min-height:36px;margin-top:6px">在島上看 →</button>`;
- el.querySelector('button').onclick=()=>selectIsland(d);$('#list').appendChild(el)})}
+function renderList(f=''){$('#list').innerHTML='';MAIN.forEach((d,i)=>{const kids=COV.filter(c=>c.parent===d.sub);const txt=d.n+d.desc+kids.map(c=>c.n+c.cover+c.who+c.myth).join('');if(f&&!txt.includes(f))return;
+ const el=document.createElement('details');if(f||d.sub==='life')el.open=true;
+ el.innerHTML=`<summary><span class="num">${String(i+1).padStart(2,'0')}</span>${d.icon} ${d.n}</summary><p>${d.desc}</p>${kids.map(c=>`<button class="kid" data-id="${c.id}">${c.icon} ${c.n}</button>`).join('')}<button class="go" style="min-height:36px;margin-top:6px">${d.sub?'進入島上 →':'看介紹 →'}</button>`;
+ el.querySelector('.go').onclick=()=>selectIsland(d);el.querySelectorAll('.kid').forEach(b=>b.onclick=()=>selectIsland(byId[b.dataset.id]));$('#list').appendChild(el)})}
 renderList();$('#q').oninput=e=>{if(!checking)renderList(e.target.value.trim())};
 // pointer pick
 const ray=new THREE.Raycaster(),ndc=new THREE.Vector2();let down=null;
 renderer.domElement.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY];fly=null});
 renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>6)return;const r=renderer.domElement.getBoundingClientRect();
- ndc.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(ndc,camera);const hit=ray.intersectObjects(pick,false)[0];if(!hit)return;
+ ndc.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(ndc,camera);const shown=o=>{while(o){if(!o.visible)return false;o=o.parent}return true};const hit=ray.intersectObjects(pick,false).find(h=>shown(h.object)&&(!h.object.parent||h.object.parent.position.y>-1||h.object.parent.parent&&h.object.parent.parent.position.y>-1));if(!hit)return;
  let d=hit.object.userData.island;if(!d&&hit.instanceId!=null)d=hit.object.userData.items[hit.instanceId].owner;if(d)selectIsland(d)});
 // ui
-$('#closeCard').onclick=closeCard;$('#bHome').onclick=()=>{closeCard();goHome()};
+$('#closeCard').onclick=closeCard;$('#bHome').onclick=()=>backToGroup();$('#bBack').onclick=()=>backToGroup();
 $('#bList').onclick=()=>{const o=$('#side').classList.toggle('open');$('#bList').setAttribute('aria-pressed',o)};
 document.querySelectorAll('#hud .t').forEach(b=>b.onclick=()=>{minutes=+b.dataset.t;applyTime(minutes);dirty=true});
 $('#bCheck').onclick=()=>setCheck(!checking);$('#bReset').onclick=()=>{have.clear();update()};
@@ -466,8 +537,10 @@ const clock=new THREE.Clock();let time=0;
 function loop(){requestAnimationFrame(loop);const dt=Math.min(clock.getDelta(),.08);const anim=!reduced;
  if(fly){const t=Math.min(1,(performance.now()-fly.t0)/800),e=ease(t);camera.position.lerpVectors(fly.p0,fly.p1,e);controls.target.lerpVectors(fly.t0v,fly.t1,e);if(t>=1)fly=null;dirty=true}
  controls.update();
+ for(const k of ['life','prop']){const g=layerG[k],ty=g.userData.ty;if(g.visible){const ny=reduced?ty:THREE.MathUtils.damp(g.position.y,ty,4.5,dt);if(Math.abs(ny-ty)<.005){g.position.y=ty;if(ty<0)g.visible=false}else{g.position.y=ny;dirty=true}}}
+ COV.forEach(d=>d.lb.visible=layerG[d.layer].visible&&layerG[d.layer].position.y>-1);
  if(anim){time+=dt;if(!paused){minutes=(minutes+dt*10)%1440;applyTime(minutes)}updateWalkers(paused?0:dt,paused?time*0:time);waterMat.uniforms.uTime.value=time;
-  tubes.forEach(t=>t.material.uniforms.uT.value=time);clouds.forEach(c=>{c.position.x+=dt*.4;if(c.position.x>center.x+70)c.position.x=center.x-70});boat.position.x=center.x+12+Math.sin(time*.1)*4;boats.forEach(b=>{const a=b.userData.a+time*.02;b.position.set(center.x+Math.cos(a)*b.userData.r,WY+.1+Math.sin(time+a*5)*.03,center.z+Math.sin(a)*b.userData.r*.8);b.rotation.y=-a});dirty=true}
+  tubes.forEach(t=>t.material.uniforms.uT.value=time);clouds.forEach(c=>{c.position.x+=dt*.4;if(c.position.x>center.x+70)c.position.x=center.x-70});boats.forEach(b=>{const a=b.userData.a+time*.02;b.position.set(center.x+Math.cos(a)*b.userData.r,WY+.1+Math.sin(time+a*5)*.03,center.z+Math.sin(a)*b.userData.r*.8);b.rotation.y=-a});dirty=true}
  else if(dirty)updateWalkers(0,0);
  const dist=camera.position.distanceTo(controls.target);smallMeshes.forEach(m=>m.visible=dist<26);
  if(!dirty)return;dirty=false;renderer.render(scene,camera);css.render(scene,camera)}
